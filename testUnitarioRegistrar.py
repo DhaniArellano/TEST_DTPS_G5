@@ -8,9 +8,10 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.color import Color
 from webdriver_manager.chrome import ChromeDriverManager
 import time
+import pathlib
 
+test_path = pathlib.Path(__file__).parent.absolute()
 class DtpsTest(unittest.TestCase):
-
     def setUp(self):
         self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
@@ -34,7 +35,7 @@ class DtpsTest(unittest.TestCase):
         seats = driver.find_element(by=By.NAME, value="num_passengers")
         seats.send_keys("4")
         photo = driver.find_element(by=By.NAME, value="photoVehicle")
-        photo.send_keys('C:\image_ds\\test.jpg')
+        photo.send_keys(str(test_path)+'\images\\test.jpg')
         sl_ft = Select(driver.find_element(by=By.XPATH, value="//*[@id='RegistrarVehiculo']/div/div/form/div[1]/div/div[7]/select"))
         sl_ft.select_by_value("electricidad")
         reg_btn = driver.find_element(by=By.NAME, value="save_vehicle")

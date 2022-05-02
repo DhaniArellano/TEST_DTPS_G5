@@ -15,7 +15,7 @@ class DtpsTest(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
-    def test_edit_php(self):
+    def test_delete_php(self):
         driver = self.driver
         driver.get("http://deyson20.pelisgoogledrivehd.xyz")
         self.assertIn("Página principal", driver.title)

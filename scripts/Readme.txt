@@ -1,0 +1,1 @@
+Hola lector, los scripts aquí contenidos no están basados en pruebas solo son modelos automatizados para comprobar su funcionamiento
